@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>門上有神 - 坪林社區知識庫</title>
+    <meta name="description" content="專題介紹傳統建築中的門神彩繪藝術，解析各類門神的典故與文化意涵。">
+
+    <!-- 根據提供的 Logo 轉換之 Favicon (SVG Data URI) -->
+    <link rel="icon" type="image/png" href="../../public/favicon.png">
+    <link rel="apple-touch-icon" href="../../public/apple-touch-icon.png">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3LLZZWSYC0"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-3LLZZWSYC0');
+    </script>
+
+    <style>
+        :root {
+            --primary-color: #5CA365;
+            --primary-dark: #4A8552;
+            --bg-color: #F4F9F5;
+            --text-color: #333333;
+            --text-muted: #666666;
+            --card-bg: #FFFFFF;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, 'PingFang TC', 'Heiti TC', 'Microsoft JhengHei', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        /* 頂部導覽與標題 */
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 2.5rem 1rem 1.75rem;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .header-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .header-logo-link {
+            display: inline-flex;
+            align-items: center;
+            text-decoration: none;
+            transition: transform 0.2s ease, opacity 0.2s ease;
+        }
+
+        .header-logo-link:hover {
+            transform: scale(1.04);
+            opacity: 0.92;
+        }
+
+        .header-logo {
+            height: 84px;
+            width: auto;
+            display: block;
+        }
+
+        .header-text {
+            text-align: left;
+        }
+
+        header h1 {
+            font-size: 2.2rem;
+            margin-bottom: 0.4rem;
+            letter-spacing: 2px;
+        }
+
+        header p {
+            font-size: 1.05rem;
+            opacity: 0.92;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        nav {
+            background-color: var(--card-bg);
+            padding: 0.75rem 1rem;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        nav a {
+            display: inline-block;
+            margin: 0.25rem 0.6rem;
+            padding: 0.4rem 0.6rem;
+            color: var(--primary-dark);
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.02rem;
+            border-radius: 6px;
+            transition: color 0.25s, background-color 0.25s;
+        }
+
+        nav a:hover {
+            color: var(--primary-color);
+            text-decoration: underline;
+        }
+
+        .nav-mobile-toggle {
+            display: none;
+            align-items: center;
+            justify-content: center;
+            gap: 0.4rem;
+            padding: 0.45rem 1rem;
+            background-color: var(--bg-color);
+            color: var(--primary-dark);
+            border: 1.5px solid var(--primary-color);
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .nav-menu-items {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 0.25rem 0.75rem;
+            width: 100%;
+        }
+
+        .nav-dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .nav-dropdown.active > a {
+            background-color: var(--primary-color);
+            color: #FFFFFF;
+        }
+
+        .nav-dropdown.active > a:hover {
+            color: #FFFFFF;
+            text-decoration: none;
+        }
+
+        .nav-submenu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            min-width: 240px;
+            max-height: 65vh;
+            overflow-y: auto;
+            background-color: var(--card-bg);
+            border-top: 3px solid var(--primary-color);
+            border-radius: 0 0 8px 8px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.12);
+            padding: 0.5rem 0;
+            text-align: left;
+            z-index: 200;
+        }
+
+        .nav-dropdown:hover .nav-submenu,
+        .nav-dropdown:focus-within .nav-submenu {
+            display: block;
+        }
+
+        .nav-submenu a {
+            display: block;
+            margin: 0;
+            padding: 0.5rem 1rem;
+            font-size: 0.92rem;
+            font-weight: normal;
+            border-radius: 0;
+            white-space: nowrap;
+        }
+
+        .nav-submenu a:hover {
+            background-color: var(--bg-color);
+            text-decoration: none;
+        }
+
+        .nav-submenu a.active {
+            background-color: var(--bg-color);
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        /* 語言切換按鈕 */
+        .lang-toggle {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            margin-left: 0.5rem;
+            padding: 0.4rem 0.9rem;
+            background-color: var(--bg-color);
+            color: var(--primary-dark);
+            border: 1.5px solid var(--primary-color);
+            border-radius: 999px;
+            font-family: inherit;
+            font-size: 0.95rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.25s, color 0.25s;
+            vertical-align: middle;
+        }
+
+        .lang-toggle:hover {
+            background-color: var(--primary-color);
+            color: #FFFFFF;
+        }
+
+        .lang-toggle svg {
+            width: 16px;
+            height: 16px;
+            flex-shrink: 0;
+        }
+
+        /* 雙語顯示控制 */
+        html[lang="zh-TW"] .lang-en {
+            display: none;
+        }
+
+        html[lang="en"] .lang-zh {
+            display: none;
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+        /* 內容區域 */
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 1.75rem 1.5rem;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            padding: 1.5rem;
+            border-top: 5px solid var(--primary-color);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        .topic-toolbar {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid #EAEAEA;
+        }
+
+        .breadcrumb {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .breadcrumb a {
+            color: var(--primary-dark);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .breadcrumb a:hover {
+            color: var(--primary-color);
+            text-decoration: underline;
+        }
+
+        .external-link {
+            display: inline-block;
+            padding: 0.35rem 0.85rem;
+            font-size: 0.88rem;
+            font-weight: bold;
+            color: var(--primary-dark);
+            background-color: var(--bg-color);
+            border: 1px solid var(--primary-color);
+            border-radius: 999px;
+            text-decoration: none;
+            transition: background-color 0.25s, color 0.25s;
+        }
+
+        .external-link:hover {
+            background-color: var(--primary-color);
+            color: #FFFFFF;
+        }
+
+        .iframe-wrapper {
+            width: 100%;
+            height: 78vh;
+            min-height: 600px;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid #E2EAE3;
+            background-color: #FFFFFF;
+        }
+
+        .iframe-wrapper iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            display: block;
+        }
+
+        /* 頁尾 */
+        footer {
+            background-color: var(--primary-dark);
+            color: white;
+            text-align: center;
+            padding: 2rem 1rem;
+            margin-top: 2.5rem;
+        }
+
+        footer p {
+            opacity: 0.8;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .nav-mobile-toggle { display: inline-flex; }
+            .nav-menu-items { display: none; flex-direction: column; width: 100%; margin-top: 0.5rem; }
+            nav.nav-open .nav-menu-items { display: flex; }
+            nav .nav-dropdown { width: 100%; text-align: center; border-bottom: 1px solid #eee; padding: 0.25rem 0; }
+            nav .nav-dropdown > a { display: block; width: 100%; margin: 0; }
+            nav .nav-submenu { display: none; position: static; box-shadow: none; border-top: none; background-color: var(--bg-color); text-align: center; max-height: 220px; width: 100%; }
+            nav .nav-dropdown.open .nav-submenu { display: block; }
+            .header-inner { flex-direction: column; gap: 0.75rem; }
+            .header-text { text-align: center; }
+            .header-logo { height: 72px; }
+            header h1 { font-size: 1.75rem; }
+            nav a { display: block; margin: 0.4rem 0; border-bottom: 1px solid #eee; }
+            .nav-dropdown { display: block; }
+            .nav-submenu { position: static; box-shadow: none; border-top: none; background-color: var(--bg-color); text-align: center; max-height: 220px; }
+            .lang-toggle { margin: 0.5rem auto 0; }
+            .card { padding: 1rem; }
+            .iframe-wrapper { height: 70vh; min-height: 480px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>門上有神</h1>
+        <p>專題介紹傳統建築中的門神彩繪藝術，解析各類門神的典故與文化意涵。</p>
+    </header>
+
+    <nav aria-label="Main Navigation">
+        <button type="button" class="nav-mobile-toggle" aria-expanded="false" aria-controls="nav-menu-items">
+            <span class="lang-zh">☰ 導覽選單</span>
+            <span class="lang-en">☰ Menu</span>
+        </button>
+        <div id="nav-menu-items" class="nav-menu-items">
+        <div class="nav-dropdown" data-category="ecology">
+            <a href="../../index.html#ecology"><span class="lang-zh">一、生態與自然環境 ▾</span><span class="lang-en">1. Ecology &amp; Nature ▾</span></a>
+            <div class="nav-submenu">
+                <a href="../../ecology/birdguide/index.html">十種鳥類的求偶方式</a>
+                <a href="../../ecology/fernjourney/index.html">仔仔細細看蕨類</a>
+                <a href="../../ecology/taiwanferns/index.html">走進蕨類世界</a>
+                <a href="../../ecology/taiwanferns-2/index.html">走進蕨類的世界</a>
+                <a href="../../ecology/pinglintree/index.html">步道上常見的喬木</a>
+                <a href="../../ecology/pinglinflora/index.html">步道上常見的野花野草</a>
+                <a href="../../ecology/pinglinshrub/index.html">步道上常見的灌木</a>
+                <a href="../../ecology/taiwanvines/index.html">步道中的藤蔓植物</a>
+                <a href="../../ecology/pinglin-guid/index.html">坪林禾草學</a>
+                <a href="../../ecology/psilotumeco/index.html">松葉蕨</a>
+                <a href="../../ecology/flowerguide/index.html">花的構造</a>
+                <a href="../../ecology/naturetrain/index.html">花的構造生態敘事</a>
+                <a href="../../ecology/insectology/index.html">昆蟲學入門</a>
+                <a href="../../ecology/insectatlas/index.html">昆蟲變態圖鑑</a>
+                <a href="../../ecology/taiwaneco/index.html">島嶼生命圖譜</a>
+                <a href="../../ecology/freshfish/index.html">淡水魚類</a>
+                <a href="../../ecology/pinglin-guid-2/index.html">莎草誌</a>
+                <a href="../../ecology/taiwanbirds/index.html">鳥類觀測站</a>
+                <a href="../../ecology/inflearn/index.html">植物花序</a>
+                <a href="../../ecology/taiwanbirds-2/index.html">微光觀測站</a>
+                <a href="../../ecology/freshfishgui/index.html">溪流觀察</a>
+                <a href="../../ecology/wanianfern/index.html">萬年松</a>
+                <a href="../../ecology/leafguide/index.html">葉片自然導覽指南</a>
+                <a href="../../ecology/taiwanplants/index.html">臺灣植物史</a>
+                <a href="../../ecology/taiwanfern/index.html">認識蕨類植物</a>
+                <a href="../../ecology/lepidolearn/index.html">認識鱗次目</a>
+                <a href="../../ecology/twbutterfly/index.html">蝶羽島嶼</a>
+                <a href="../../ecology/jingualliao/index.html">燕尾蕨</a>
+                <a href="../../ecology/taiwanferns-3/index.html">蕨見臺灣</a>
+                <a href="../../ecology/taiwanfern-2/index.html">蕨徑</a>
+                <a href="../../ecology/fernintro/index.html">蕨類入門</a>
+                <a href="../../ecology/fernguide/index.html">蕨類入門（郭城孟）</a>
+                <a href="../../ecology/fernfield/index.html">蕨類入門（擴充版）</a>
+                <a href="../../ecology/fernecolat/index.html">蕨類生態誌</a>
+                <a href="../../ecology/pinglintrail/index.html">雙扇蕨</a>
+            </div>
+        </div>
+        <div class="nav-dropdown" data-category="tea">
+            <a href="../../index.html#tea"><span class="lang-zh">二、茶業與茶文化 ▾</span><span class="lang-en">2. Tea Industry &amp; Culture ▾</span></a>
+            <div class="nav-submenu">
+                <a href="../../tea/teaculture/index.html">一片葉子的千年奇幻漂流</a>
+                <a href="../../tea/orientaltea/index.html">一葉成香東方美人</a>
+                <a href="../../tea/daguantea/index.html">大觀茶論對後世的影響</a>
+                <a href="../../tea/chinatea/index.html">中國名茶</a>
+                <a href="../../tea/taiwantea/index.html">日治時期台灣茶業發展史</a>
+                <a href="../../tea/taiwantea-2/index.html">日治時期的茶業發展</a>
+                <a href="../../tea/whitetearese/index.html">白茶全產業研究</a>
+                <a href="../../tea/tangmusic/index.html">白茶品鑑</a>
+                <a href="../../tea/paochongtea/index.html">包種茶製作過程</a>
+                <a href="../../tea/dongfangtea/index.html">東方美人</a>
+                <a href="../../tea/oriental-tea/index.html">東方美人茶的生態</a>
+                <a href="../../tea/teatasting/index.html">花茶與緊壓茶</a>
+                <a href="../../tea/blacktea/index.html">紅茶品鑑</a>
+                <a href="../../tea/pinglintea/index.html">茶山慢行</a>
+                <a href="../../tea/teaaesthics/index.html">茶事美學</a>
+                <a href="../../tea/teahistory/index.html">茶的流變</a>
+                <a href="../../tea/teaculture-2/index.html">茶席檔案室</a>
+                <a href="../../tea/teaknowledge/index.html">茶知識</a>
+                <a href="../../tea/taiwanbirds/index.html">茶路臺灣</a>
+                <a href="../../tea/teascience/index.html">茶葉品鑑</a>
+                <a href="../../tea/chajingrep/index.html">茶經對後世的影響</a>
+                <a href="../../tea/teabodyscien/index.html">茶與人體的科學對話</a>
+                <a href="../../tea/blacktea-2/index.html">茶誌</a>
+                <a href="../../tea/bakingguide/index.html">茶間檔案室</a>
+                <a href="../../tea/oolongguide/index.html">烏龍茶品鑑</a>
+                <a href="../../tea/taiwantea-3/index.html">清代茶業發展史</a>
+                <a href="../../tea/taiwantea-4/index.html">清代茶業發展脈絡</a>
+                <a href="../../tea/taiwantea-5/index.html">清代茶葉發展史</a>
+                <a href="../../tea/taiwantea-6/index.html">清代臺灣茶業發展史</a>
+                <a href="../../tea/teaclassic/index.html">陸羽茶經對茶界的影響</a>
+                <a href="../../tea/blacktea-3/index.html">黑茶品鑑</a>
+                <a href="../../tea/tangmusic-2/index.html">黃茶品鑑</a>
+                <a href="../../tea/pinglintea-2/index.html">當茶園成為一座活的生態系</a>
+                <a href="../../tea/honeyguide/index.html">蜜香紅茶製作工藝</a>
+                <a href="../../tea/yinhaofucui/index.html">銀毫浮翠岩骨陳韻</a>
+                <a href="../../tea/tangmusic-3/index.html">綠茶品鑑</a>
+                <a href="../../tea/tearesearch/index.html">臺灣茶改場的貢獻</a>
+                <a href="../../tea/taiwantea-7/index.html">臺灣茶產業發展史</a>
+                <a href="../../tea/taiwantea-8/index.html">臺灣茶譜</a>
+                <a href="../../tea/taiwantea-9/index.html">臺灣茶譜 (二)</a>
+                <a href="../../tea/taiwantea-10/index.html">臺灣茶韻</a>
+                <a href="../../tea/pinglintea-3/index.html">與水共生的茶鄉故事</a>
+                <a href="../../tea/lutongtea/index.html">盧仝七椀茶詩</a>
+                <a href="../../tea/teasolar25/index.html">曜日茶譜</a>
+            </div>
+        </div>
+        <div class="nav-dropdown active" data-category="history">
+            <a href="../../index.html#history"><span class="lang-zh">三、歷史與人文古蹟 ▾</span><span class="lang-en">3. History &amp; Heritage ▾</span></a>
+            <div class="nav-submenu">
+                <a href="../../history/dutch-tw-his/index.html">十七世紀的臺灣</a>
+                <a href="../../history/dana-inciden/index.html">大南澳事件</a>
+                <a href="../../history/taiwan-sail/index.html">大航海時代</a>
+                <a href="../../history/peacehist/index.html">大觀義學</a>
+                <a href="../../history/heritagegf/index.html">文化遺產攝影指南</a>
+                <a href="../../history/taiwangeo/index.html">台灣在地緣戰略演變中的歷史轉型</a>
+                <a href="../../history/taiwanatlas/index.html">台灣在地緣戰略演變中的歷史轉型 (二)</a>
+                <a href="../../history/heritagehub/index.html">古蹟入門</a>
+                <a href="../../history/globaltrade/index.html">全球貿易之路</a>
+                <a href="../../history/yansi-mariti/index.html">全球貿易之路 (二)</a>
+                <a href="../../history/taiwanbirds/index.html">光影雕刻刀</a>
+                <a href="../../history/industdeity/index.html">百業有神</a>
+                <a href="../../history/earthexplr/index.html">地理學不到的事</a>
+                <a href="../../history/zeelandia/index.html">決戰熱蘭遮</a>
+                <a href="../../history/dongninghist/index.html">東寧王國啟示錄</a>
+                <a href="../../history/dongninghist-2/index.html">東寧王國的組織性崩潰</a>
+                <a href="../../history/dongningarch/index.html">東寧王國的總建築師</a>
+                <a href="../../history/famentempl/index.html">法門寺地宮</a>
+                <a href="../../history/menshen-tw/index.html" class="active">門上有神</a>
+                <a href="../../history/tangmusic/index.html">唐人宮樂圖</a>
+                <a href="../../history/tamsuiport/index.html">淡水河流域的百年興衰</a>
+                <a href="../../history/tamsuistory/index.html">淡水河的故事</a>
+                <a href="../../history/tamsuipoet/index.html">淡水港史話</a>
+                <a href="../../history/taiwanbirds-2/index.html">陰陽合曆</a>
+                <a href="../../history/taipeiprover/index.html">從諺語看臺北城的歷史</a>
+                <a href="../../history/topxiahist/index.html">頂下郊拼</a>
+                <a href="../../history/ketagalan/index.html">凱達格蘭族的故事</a>
+                <a href="../../history/taiwanhouse/index.html">街屋之間</a>
+                <a href="../../history/zhanghistory/index.html">漳泉之間</a>
+                <a href="../../history/zhangconflic/index.html">漳泉械鬥後的影響</a>
+                <a href="../../history/zhangquan/index.html">漳泉械鬥對後世的影響</a>
+                <a href="../../history/mingzhenghis/index.html">臺灣史上第一個漢人政權</a>
+                <a href="../../history/taiwan-names/index.html">臺灣地名演變</a>
+                <a href="../../history/taiwannames/index.html">臺灣地名的起源</a>
+                <a href="../../history/taiwanarch/index.html">臺灣傳統建築數位導覽</a>
+                <a href="../../history/taiwanbirds-3/index.html">臺灣廟宇建築</a>
+                <a href="../../history/taiwanhouse-2/index.html">臺灣街屋</a>
+                <a href="../../history/tw-history/index.html">臺灣歷史故事</a>
+                <a href="../../history/penghubattl/index.html">澎湖海戰：一場決定性的海戰</a>
+                <a href="../../history/taiwanarch-2/index.html">磚瓦間的秘密</a>
+                <a href="../../history/tradwall/index.html">牆的時代</a>
+                <a href="../../history/yansi-mariti-2/index.html">顏思齊與大航海時代</a>
+                <a href="../../history/roverarchive/index.html">羅發號事件</a>
+            </div>
+        </div>
+        <div class="nav-dropdown" data-category="guide">
+            <a href="../../index.html#guide"><span class="lang-zh">四、導覽實務與生活探索 ▾</span><span class="lang-en">4. Guiding &amp; Living ▾</span></a>
+            <div class="nav-submenu">
+                <a href="../../guide/tourguide/index.html">山徑手冊</a>
+                <a href="../../guide/taijisolar/index.html">太極與24節氣</a>
+                <a href="../../guide/plantguide/index.html">如何觀察一棵樹</a>
+                <a href="../../guide/storylab/index.html">如何講好一個故事</a>
+                <a href="../../guide/pinglinjourn/index.html">坪林人文（尋根訪古之旅）</a>
+                <a href="../../guide/pinglintea/index.html">坪林深度全記錄</a>
+                <a href="../../guide/pinglintea-2/index.html">坪林茶鄉導覽解說員指南</a>
+                <a href="../../guide/pinglinatlas/index.html">坪林的山水茶人</a>
+                <a href="../../guide/storyguide/index.html">故事工作室</a>
+                <a href="../../guide/tourguide-2/index.html">專業導覽解說與帶團實務</a>
+                <a href="../../guide/seasonalwell/index.html">順時而養</a>
+                <a href="../../guide/solarterms/index.html">節氣誌</a>
+                <a href="../../guide/tourguide-3/index.html">導覽實務與情境掌控</a>
+                <a href="../../guide/pinglintea-3/index.html">讀懂坪林的山水</a>
+                <a href="../../guide/pinglinsense/index.html">讓感觀帶你走進坪林</a>
+            </div>
+        </div>
+        <div class="nav-dropdown" data-category="local-culture">
+            <a href="../../index.html#local-culture"><span class="lang-zh">五、在地文化 ▾</span><span class="lang-en">5. Local Culture ▾</span></a>
+            <div class="nav-submenu">
+                <a href="../../local-culture/xiangbao-song/index.html"><span class="lang-zh">坪林相褒歌</span><span class="lang-en">Pinglin Xiangbao Song</span></a>
+            </div>
+        </div>
+        <button type="button" id="lang-toggle" class="lang-toggle" aria-label="Switch Language">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="2" y1="12" x2="22" y2="12"></line>
+                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+            </svg>
+            <span id="lang-toggle-label">中 / EN</span>
+        </button>
+        </div>
+    </nav>
+
+    <main class="container">
+        <div class="card">
+            <div class="topic-toolbar">
+                <div class="breadcrumb" aria-label="Breadcrumb">
+                    <a href="../../index.html"><span class="lang-zh">首頁</span><span class="lang-en">Home</span></a> &gt;
+                    <a href="../../index.html#history"><span class="lang-zh">三、歷史與人文古蹟</span><span class="lang-en">3. History &amp; Heritage</span></a> &gt;
+                    <span>門上有神</span>
+                </div>
+                <a class="external-link" href="https://menshen-tw-fvemkynk.manus.space" target="_blank" rel="noopener noreferrer">
+                    <span class="lang-zh">在新分頁開啟 ↗</span>
+                    <span class="lang-en">Open in New Tab ↗</span>
+                </a>
+            </div>
+            <div class="iframe-wrapper">
+                <iframe src="https://menshen-tw-fvemkynk.manus.space" title="門上有神" loading="lazy" allowfullscreen></iframe>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>
+            <span class="lang-zh">&copy; 2026 坪林社區發展協會版權所有</span>
+            <span class="lang-en">&copy; 2026 Pinglin Community Development Association. All rights reserved.</span>
+        </p>
+    </footer>
+
+    <script>
+        (function () {
+            const STORAGE_KEY = 'pinglin_knowledge_lang';
+            const toggleBtn = document.getElementById('lang-toggle');
+            const toggleLabel = document.getElementById('lang-toggle-label');
+            const titles = {
+                'zh-TW': '門上有神 - 坪林社區知識庫',
+                'en': '門上有神 - Pinglin Community Knowledge Base'
+            };
+
+            function applyLanguage(lang) {
+                const normalized = lang === 'en' ? 'en' : 'zh-TW';
+                document.documentElement.setAttribute('lang', normalized);
+                document.title = titles[normalized];
+                if (toggleLabel) {
+                    toggleLabel.textContent = normalized === 'zh-TW' ? '中 / EN' : 'EN / 中';
+                }
+            }
+
+            const savedLang = localStorage.getItem(STORAGE_KEY) || 'zh-TW';
+            applyLanguage(savedLang);
+
+            if (toggleBtn) {
+                toggleBtn.addEventListener('click', function () {
+                    const current = document.documentElement.getAttribute('lang');
+                    const next = current === 'en' ? 'zh-TW' : 'en';
+                    localStorage.setItem(STORAGE_KEY, next);
+                    applyLanguage(next);
+                });
+            }
+        })();
+    </script>
+
+    <script>
+        (function () {
+            const nav = document.querySelector('nav[aria-label="Main Navigation"]');
+            const mobileBtn = document.querySelector('.nav-mobile-toggle');
+            if (nav && mobileBtn) {
+                mobileBtn.addEventListener('click', function () {
+                    const isOpen = nav.classList.toggle('nav-open');
+                    mobileBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+                });
+            }
+            document.querySelectorAll('nav .nav-dropdown > a').forEach(function (link) {
+                link.addEventListener('click', function (e) {
+                    if (window.innerWidth <= 768) {
+                        e.preventDefault();
+                        const parent = link.parentElement;
+                        const wasOpen = parent.classList.contains('open');
+                        document.querySelectorAll('nav .nav-dropdown').forEach(function (el) {
+                            el.classList.remove('open');
+                        });
+                        if (!wasOpen) {
+                            parent.classList.add('open');
+                        }
+                    }
+                });
+            });
+        })();
+    </script>
+
+</body>
+</html>
